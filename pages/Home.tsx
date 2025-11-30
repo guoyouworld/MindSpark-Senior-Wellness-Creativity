@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { AppRoute } from '../types';
-import { Brain, BookOpen, Sparkles, Activity, Video } from 'lucide-react';
+import { Brain, BookOpen, Sparkles, Activity, Video, Tag } from 'lucide-react';
 
 interface HomeProps {
   onNavigate: (route: AppRoute) => void;
@@ -21,6 +22,20 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       </section>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {/* Version Release Card */}
+        <div 
+          onClick={() => onNavigate(AppRoute.VERSION_RELEASE)}
+          className="group cursor-pointer bg-white p-8 rounded-2xl shadow-md border-b-4 border-gray-500 hover:shadow-xl transition-all hover:-translate-y-1"
+        >
+          <div className="h-14 w-14 bg-gray-100 text-gray-600 rounded-full flex items-center justify-center mb-6">
+            <Tag className="h-8 w-8" />
+          </div>
+          <h3 className="text-2xl font-bold text-stone-800 mb-2">版本发布</h3>
+          <p className="text-stone-500">
+            分镜助手软件更新日志。查看最新功能发布、Bug修复以及下载链接。
+          </p>
+        </div>
         
         {/* Brain Training Card */}
         <div 
@@ -64,7 +79,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           </p>
         </div>
 
-        {/* Video Publisher Card - NEW */}
+        {/* Video Publisher Card */}
         <div 
           onClick={() => onNavigate(AppRoute.VIDEO_PUBLISHER)}
           className="group cursor-pointer bg-white p-8 rounded-2xl shadow-md border-b-4 border-rose-500 hover:shadow-xl transition-all hover:-translate-y-1"
@@ -81,7 +96,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         {/* I Ching Card */}
         <div 
           onClick={() => onNavigate(AppRoute.ICHING)}
-          className="group cursor-pointer bg-white p-8 rounded-2xl shadow-md border-b-4 border-purple-500 hover:shadow-xl transition-all hover:-translate-y-1 lg:col-span-2 lg:w-1/2 lg:mx-auto"
+          className="group cursor-pointer bg-white p-8 rounded-2xl shadow-md border-b-4 border-purple-500 hover:shadow-xl transition-all hover:-translate-y-1"
         >
           <div className="h-14 w-14 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mb-6">
             <Sparkles className="h-8 w-8" />

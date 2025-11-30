@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
 import { AppRoute } from '../types';
-import { Menu, X, Home, Brain, BookOpen, Sparkles, Video } from 'lucide-react';
+import { Menu, X, Home, Brain, BookOpen, Sparkles, Video, Tag } from 'lucide-react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -13,6 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children, currentRoute, onNavigate }) =
 
   const navItems = [
     { route: AppRoute.HOME, label: '主页 (Home)', icon: Home },
+    { route: AppRoute.VERSION_RELEASE, label: '版本发布', icon: Tag },
     { route: AppRoute.GAME_MEMORY, label: '记忆训练', icon: Brain },
     { route: AppRoute.GAME_FOCUS, label: '专注测试', icon: Brain },
     { route: AppRoute.COMIC_CREATOR, label: 'AI 漫画工坊', icon: BookOpen },

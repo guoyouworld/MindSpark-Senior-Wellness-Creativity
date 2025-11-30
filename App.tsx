@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Layout from './components/Layout';
 import Home from './pages/Home';
@@ -5,6 +6,7 @@ import MemoryGame from './pages/MemoryGame';
 import FocusGame from './pages/FocusGame';
 import ComicCreator from './pages/ComicCreator';
 import VideoPublisher from './pages/VideoPublisher';
+import VersionRelease from './pages/VersionRelease';
 import IChing from './pages/IChing';
 import { AppRoute } from './types';
 
@@ -25,6 +27,8 @@ const App: React.FC = () => {
         return <VideoPublisher />;
       case AppRoute.ICHING:
         return <IChing />;
+      case AppRoute.VERSION_RELEASE:
+        return <VersionRelease />;
       default:
         return <Home onNavigate={setCurrentRoute} />;
     }
